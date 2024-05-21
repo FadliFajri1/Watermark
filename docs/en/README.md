@@ -1,9 +1,7 @@
 
-
-
 # blind-watermark
 
-Blind watermark based on DWT-DCT-SVD.
+Blind watermark based on dct and svd.
 
 
 [![PyPI](https://img.shields.io/pypi/v/blind_watermark)](https://pypi.org/project/blind_watermark/)
@@ -40,7 +38,7 @@ pip install .
 # How to use
 
 
-## Use in bash
+### Use in bash
 
 
 ```bash
@@ -56,7 +54,7 @@ blind_watermark --extract --pwd 1234 --wm_shape 111 examples/output/embedded.png
 
 Original Image + Watermark = Watermarked Image
 
-![origin_image](docs/原图.jpeg) + '@guofei9987 开源万岁！' = ![打上水印的图](docs/打上水印的图.jpg)
+![origin_image](https://blindwatermark.github.io/blind_watermark/原图.jpeg) + '@guofei9987 开源万岁！' = ![打上水印的图](https://blindwatermark.github.io/blind_watermark/打上水印的图.jpg)
 
 
 See the [codes](/examples/example_str.py)
@@ -88,14 +86,14 @@ Output:
 
 |attack method|image after attack|extracted watermark|
 |--|--|--|
-|Rotate 45 Degrees|![旋转攻击](docs/旋转攻击.jpg)|'@guofei9987 开源万岁！'|
-|Random crop|![截屏攻击](docs/截屏攻击2_还原.jpg)|'@guofei9987 开源万岁！'|
-|Masks| ![多遮挡攻击](docs/多遮挡攻击.jpg) |'@guofei9987 开源万岁！'|
-|Vertical cut|![横向裁剪攻击](docs/横向裁剪攻击_填补.jpg)|'@guofei9987 开源万岁！'|
-|Horizontal cut|![纵向裁剪攻击](docs/纵向裁剪攻击_填补.jpg)|'@guofei9987 开源万岁！'|
-|Resize|![缩放攻击](docs/缩放攻击.jpg)|'@guofei9987 开源万岁！'|
-|Pepper Noise|![椒盐攻击](docs/椒盐攻击.jpg)|'@guofei9987 开源万岁！'|
-|Brightness 10% Down|![亮度攻击](docs/亮度攻击.jpg)|'@guofei9987 开源万岁！'|
+|Rotate 45 Degrees|![旋转攻击](https://blindwatermark.github.io/blind_watermark/旋转攻击.jpg)|'@guofei9987 开源万岁！'|
+|Random crop|![截屏攻击](https://blindwatermark.github.io/blind_watermark/截屏攻击2_还原.jpg)|'@guofei9987 开源万岁！'|
+|Masks| ![多遮挡攻击](https://blindwatermark.github.io/blind_watermark/多遮挡攻击.jpg) |'@guofei9987 开源万岁！'|
+|50% Horizontal cut|![横向裁剪攻击](https://blindwatermark.github.io/blind_watermark/横向裁剪攻击_填补.jpg)|'@guofei9987 开源万岁！'|
+|50% Vertical cut|![纵向裁剪攻击](https://blindwatermark.github.io/blind_watermark/纵向裁剪攻击_填补.jpg)|'@guofei9987 开源万岁！'|
+|Resize 0.5|![缩放攻击](https://blindwatermark.github.io/blind_watermark/缩放攻击.jpg)|'@guofei9987 开源万岁！'|
+|Pepper Noise|![椒盐攻击](https://blindwatermark.github.io/blind_watermark/椒盐攻击.jpg)|'@guofei9987 开源万岁！'|
+|Brightness 10% Down|![亮度攻击](https://blindwatermark.github.io/blind_watermark/亮度攻击.jpg)|'@guofei9987 开源万岁！'|
 
 
 
@@ -128,9 +126,9 @@ bwm1.extract(filename='output/embedded.png', wm_shape=(128, 128), out_wm_name='o
 
 |attack method|image after attack|extracted watermark|
 |--|--|--|
-|Rotate 45 Degrees|![旋转攻击](docs/旋转攻击.jpg)|![](docs/旋转攻击_提取水印.png)|
-|Random crop|![截屏攻击](docs/截屏攻击2_还原.jpg)|![多遮挡_提取水印](docs/多遮挡攻击_提取水印.png)|
-|Mask| ![多遮挡攻击](docs/多遮挡攻击.jpg) |![多遮挡_提取水印](docs/多遮挡攻击_提取水印.png)|
+|Rotate 45 Degrees|![旋转攻击](https://blindwatermark.github.io/blind_watermark/旋转攻击.jpg)|![](https://blindwatermark.github.io/blind_watermark/旋转攻击_提取水印.png)|
+|Random crop|![截屏攻击](https://blindwatermark.github.io/blind_watermark/截屏攻击2_还原.jpg)|![多遮挡_提取水印](https://blindwatermark.github.io/blind_watermark/多遮挡攻击_提取水印.png)|
+|Mask| ![多遮挡攻击](https://blindwatermark.github.io/blind_watermark/多遮挡攻击.jpg) |![多遮挡_提取水印](https://blindwatermark.github.io/blind_watermark/多遮挡攻击_提取水印.png)|
 
 
 ### embed array of bits
@@ -169,9 +167,9 @@ The output `wm_extract` is an array of float. set a threshold such as 0.5.
 ```python
 WaterMark(..., processes=None)
 ```
-- `processes` number of processes, can be integer. Default `None`, which means using all processes.  
+- `processes`: number of processes, can be integer. Default `None`, meaning use all processes.  
 
 ## Related Project
 
-- text_blind_watermark (Embed message into text): [https://github.com/guofei9987/text_blind_watermark](https://github.com/guofei9987/text_blind_watermark)  
-- HideInfo（hide as image, hide as sounds, hide as text）：[https://github.com/guofei9987/HideInfo](https://github.com/guofei9987/HideInfo)
+text_blind_watermark: [https://github.com/guofei9987/text_blind_watermark](https://github.com/guofei9987/text_blind_watermark)  
+Embed message into text.
